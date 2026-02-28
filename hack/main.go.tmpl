@@ -11,6 +11,7 @@ import (
 	"gopkg.in/alecthomas/kingpin.v2"
 	"k8s.io/client-go/tools/leaderelection/resourcelock"
 	ctrl "sigs.k8s.io/controller-runtime"
+	"sigs.k8s.io/controller-runtime/pkg/cache"
 	"sigs.k8s.io/controller-runtime/pkg/log/zap"
 
 	xpcontroller "github.com/crossplane/crossplane-runtime/pkg/controller"
@@ -59,6 +60,9 @@ func main() {
 	kingpin.FatalIfError(err, "Cannot get API server rest config")
 
 	mgr, err := ctrl.NewManager(cfg, ctrl.Options{
+		Cache: cache.Options{
+			SyncPeriod: syncPeriod,
+		},
 		LeaderElection:             *leaderElection,
 		LeaderElectionID:           "crossplane-leader-election-provider-oci-{{ .Group }}",
 		LeaderElectionResourceLock: resourcelock.LeasesResourceLock,
