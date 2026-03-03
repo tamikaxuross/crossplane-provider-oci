@@ -126,14 +126,22 @@ jobs:
       - name: Calculate packages to build & push
         id: packages
         run: |
-          echo target=$(python3 -c "print(' '.join(\"${{ needs.index.outputs.subpackages }}\".split(',')[int(\"${{ matrix.index }}\") * int(\"${{ inputs.size }}\"): (int(\"${{ matrix.index }}\")+1) * int(\"${{ inputs.size }}\")]))") >> "$GITHUB_OUTPUT"
+          PACKAGES_BATCH=$(python3 -c "
+          all_packages = \"${{ needs.index.outputs.subpackages }}\".split(',')
+          start_idx = int(\"${{ matrix.index }}\") * int(\"${{ inputs.size }}\")
+          batch = all_packages[start_idx:start_idx + int(\"${{ inputs.size }}\")]
+          if 'config' not in batch:
+              batch = ['config'] + batch
+          print(','.join(batch))
+          ")
+          echo "packages_batch=$PACKAGES_BATCH" >> "$GITHUB_OUTPUT"
 
       - name: Build Artifacts
         id: build_artifacts
         run: |
           go install golang.org/x/tools/cmd/goimports@latest
           make generate
-          make SUBPACKAGES="${{ needs.index.outputs.subpackages }}" PLATFORMS="${{ inputs.platform }}" build
+          make SUBPACKAGES="${{ steps.packages.outputs.packages_batch }}" PLATFORMS="${{ inputs.platform }}" build
         env:
           # We're using docker buildx, which doesn't actually load the images it
           # builds by default. Specifying --load does so.
@@ -141,4 +149,4 @@ jobs:
 
       - name: Publish Artifacts
         run: |
-          make SUBPACKAGES_FOR_BATCH="${{ needs.index.outputs.subpackages }}" XPKG_REG_ORGS="${{ env.CROSSPLANE_REGORG }}" VERSION=${{ inputs.version }} BATCH_PLATFORMS="$(echo ${{ inputs.platform }} | tr ' ' ',')" publish-subpackages
+          make SUBPACKAGES_FOR_BATCH="${{ steps.packages.outputs.packages_batch }}" XPKG_REG_ORGS="${{ env.CROSSPLANE_REGORG }}" VERSION=${{ inputs.version }} BATCH_PLATFORMS="$(echo ${{ inputs.platform }} | tr ' ' ',')" publish-subpackages
