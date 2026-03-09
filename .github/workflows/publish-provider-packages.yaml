@@ -4,8 +4,8 @@ on:
   workflow_dispatch:
     inputs:
       subpackages:
-        description: 'Subpackages to be built individually (e.g. config containerengine)'
-        default: 'config,objectstorage,identity,networkloadbalancer,loadbalancer,containerengine,networking,certificatesmanagement,kms'
+        description: 'Subpackages to be built individually (e.g. config,containerengine or "all" for all services)'
+        default: 'all'
         required: true
 
       version:
@@ -41,10 +41,25 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       indices: ${{ steps.calc.outputs.indices }}
+      subpackages: ${{ steps.calc.outputs.subpackages }}
     steps:
+      - name: Checkout
+        uses: actions/checkout@8ade135a41bc03ea155e62e844d188df1ea18608 # v4
+
       - id: calc
         run: |
-          python3 -c "import math; print(f'indices={list(range(0, math.ceil(len(\"${{ inputs.subpackages }}\".split(',')) / int(\"${{ inputs.size }}\"))))}')" >> "$GITHUB_OUTPUT"
+          if [ "${{ inputs.subpackages }}" = "all" ]; then
+            SERVICES_LIST=$(find examples-generated -mindepth 1 -maxdepth 1 -type d 2>/dev/null | xargs -n1 basename | tr '\n' ',' | sed 's/,$//' || echo "")
+            if [ -n "$SERVICES_LIST" ]; then
+              SUBPACKAGES="config,$SERVICES_LIST"
+            else
+              SUBPACKAGES="config"
+            fi
+          else
+            SUBPACKAGES="${{ inputs.subpackages }}"
+          fi
+          python3 -c "import math; print(f'indices={list(range(0, math.ceil(len(\"$SUBPACKAGES\".split(',')) / int(\"${{ inputs.size }}\"))))}')" >> "$GITHUB_OUTPUT"
+          echo "subpackages=$SUBPACKAGES" >> "$GITHUB_OUTPUT"
 
   publish-artifacts:
     strategy:
@@ -111,14 +126,22 @@ jobs:
       - name: Calculate packages to build & push
         id: packages
         run: |
-          echo target=$(python3 -c "print(' '.join(\"${{ inputs.subpackages }}\".split(',')[int(\"${{ matrix.index }}\") * int(\"${{ inputs.size }}\"): (int(\"${{ matrix.index }}\")+1) * int(\"${{ inputs.size }}\")]))") >> "$GITHUB_OUTPUT"
+          PACKAGES_BATCH=$(python3 -c "
+          all_packages = \"${{ needs.index.outputs.subpackages }}\".split(',')
+          start_idx = int(\"${{ matrix.index }}\") * int(\"${{ inputs.size }}\")
+          batch = all_packages[start_idx:start_idx + int(\"${{ inputs.size }}\")]
+          if 'config' not in batch:
+              batch = ['config'] + batch
+          print(','.join(batch))
+          ")
+          echo "packages_batch=$PACKAGES_BATCH" >> "$GITHUB_OUTPUT"
 
       - name: Build Artifacts
         id: build_artifacts
         run: |
           go install golang.org/x/tools/cmd/goimports@latest
           make generate
-          make SUBPACKAGES="${{ inputs.subpackages }}" PLATFORMS="${{ inputs.platform }}" build
+          make SUBPACKAGES="${{ steps.packages.outputs.packages_batch }}" PLATFORMS="${{ inputs.platform }}" build
         env:
           # We're using docker buildx, which doesn't actually load the images it
           # builds by default. Specifying --load does so.
@@ -126,4 +149,4 @@ jobs:
 
       - name: Publish Artifacts
         run: |
-          make SUBPACKAGES_FOR_BATCH="${{ inputs.subpackages }}" XPKG_REG_ORGS="${{ env.CROSSPLANE_REGORG }}" VERSION=${{ inputs.version }} BATCH_PLATFORMS="$(echo ${{ inputs.platform }} | tr ' ' ',')" publish-subpackages
+          make SUBPACKAGES_FOR_BATCH="${{ steps.packages.outputs.packages_batch }}" XPKG_REG_ORGS="${{ env.CROSSPLANE_REGORG }}" VERSION=${{ inputs.version }} BATCH_PLATFORMS="$(echo ${{ inputs.platform }} | tr ' ' ',')" publish-subpackages
