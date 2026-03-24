@@ -80,7 +80,7 @@ func main() {
 			Logger:                  log,
 			GlobalRateLimiter:       ratelimiter.NewGlobal(*maxReconcileRate),
 			PollInterval:            1 * time.Minute,
-			MaxConcurrentReconciles: 1,
+			MaxConcurrentReconciles: *maxReconcileRate,
 			Features:                &feature.Flags{},
 		},
 		Provider: config.GetProvider(),
