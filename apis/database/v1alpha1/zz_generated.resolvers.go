@@ -7551,8 +7551,8 @@ func (mg *MaintenanceRun) ResolveReferences(ctx context.Context, c client.Reader
 	return nil
 }
 
-// ResolveReferences of this ManagementAutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement.
-func (mg *ManagementAutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement) ResolveReferences(ctx context.Context, c client.Reader) error {
+// ResolveReferences of this ManagementAutonomousDatabaseDbmFeaturesManagement.
+func (mg *ManagementAutonomousDatabaseDbmFeaturesManagement) ResolveReferences(ctx context.Context, c client.Reader) error {
 	var m xpresource.Managed
 	var l xpresource.ManagedList
 	r := reference.NewAPIResolver(c, mg)
@@ -9794,8 +9794,8 @@ func (mg *ManagementExternalMySqlDatabaseConnector) ResolveReferences(ctx contex
 	return nil
 }
 
-// ResolveReferences of this ManagementExternalMySqlDatabaseExternalMysqlDatabasesManagement.
-func (mg *ManagementExternalMySqlDatabaseExternalMysqlDatabasesManagement) ResolveReferences(ctx context.Context, c client.Reader) error {
+// ResolveReferences of this ManagementExternalMySqlDatabaseExternalMysqlDatabases.
+func (mg *ManagementExternalMySqlDatabaseExternalMysqlDatabases) ResolveReferences(ctx context.Context, c client.Reader) error {
 	var m xpresource.Managed
 	var l xpresource.ManagedList
 	r := reference.NewAPIResolver(c, mg)
@@ -9844,8 +9844,8 @@ func (mg *ManagementExternalMySqlDatabaseExternalMysqlDatabasesManagement) Resol
 	return nil
 }
 
-// ResolveReferences of this ManagementExternalcontainerdatabaseExternalContainerDbmFeaturesManagement.
-func (mg *ManagementExternalcontainerdatabaseExternalContainerDbmFeaturesManagement) ResolveReferences(ctx context.Context, c client.Reader) error {
+// ResolveReferences of this ManagementExternalcontainerdatabaseDbmFeaturesManagement.
+func (mg *ManagementExternalcontainerdatabaseDbmFeaturesManagement) ResolveReferences(ctx context.Context, c client.Reader) error {
 	var m xpresource.Managed
 	var l xpresource.ManagedList
 	r := reference.NewAPIResolver(c, mg)
@@ -9941,8 +9941,8 @@ func (mg *ManagementExternalcontainerdatabaseExternalContainerDbmFeaturesManagem
 	return nil
 }
 
-// ResolveReferences of this ManagementExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement.
-func (mg *ManagementExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement) ResolveReferences(ctx context.Context, c client.Reader) error {
+// ResolveReferences of this ManagementExternalnoncontainerdatabaseDbmFeaturesManagement.
+func (mg *ManagementExternalnoncontainerdatabaseDbmFeaturesManagement) ResolveReferences(ctx context.Context, c client.Reader) error {
 	var m xpresource.Managed
 	var l xpresource.ManagedList
 	r := reference.NewAPIResolver(c, mg)
@@ -10038,8 +10038,8 @@ func (mg *ManagementExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesM
 	return nil
 }
 
-// ResolveReferences of this ManagementExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement.
-func (mg *ManagementExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement) ResolveReferences(ctx context.Context, c client.Reader) error {
+// ResolveReferences of this ManagementExternalpluggabledatabaseDbmFeaturesManagement.
+func (mg *ManagementExternalpluggabledatabaseDbmFeaturesManagement) ResolveReferences(ctx context.Context, c client.Reader) error {
 	var m xpresource.Managed
 	var l xpresource.ManagedList
 	r := reference.NewAPIResolver(c, mg)
@@ -10680,8 +10680,8 @@ func (mg *ManagementNamedCredential) ResolveReferences(ctx context.Context, c cl
 	return nil
 }
 
-// ResolveReferences of this ManagementPluggabledatabasePluggableDatabaseDbmFeaturesManagement.
-func (mg *ManagementPluggabledatabasePluggableDatabaseDbmFeaturesManagement) ResolveReferences(ctx context.Context, c client.Reader) error {
+// ResolveReferences of this ManagementPluggabledatabaseDbmFeaturesManagement.
+func (mg *ManagementPluggabledatabaseDbmFeaturesManagement) ResolveReferences(ctx context.Context, c client.Reader) error {
 	var m xpresource.Managed
 	var l xpresource.ManagedList
 	r := reference.NewAPIResolver(c, mg)

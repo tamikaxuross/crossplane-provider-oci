@@ -3787,63 +3787,63 @@ func (mg *MaintenanceRun) SetWriteConnectionSecretToReference(r *xpv1.SecretRefe
 	mg.Spec.WriteConnectionSecretToReference = r
 }
 
-// GetCondition of this ManagementAutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement.
-func (mg *ManagementAutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement) GetCondition(ct xpv1.ConditionType) xpv1.Condition {
+// GetCondition of this ManagementAutonomousDatabaseDbmFeaturesManagement.
+func (mg *ManagementAutonomousDatabaseDbmFeaturesManagement) GetCondition(ct xpv1.ConditionType) xpv1.Condition {
 	return mg.Status.GetCondition(ct)
 }
 
-// GetDeletionPolicy of this ManagementAutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement.
-func (mg *ManagementAutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement) GetDeletionPolicy() xpv1.DeletionPolicy {
+// GetDeletionPolicy of this ManagementAutonomousDatabaseDbmFeaturesManagement.
+func (mg *ManagementAutonomousDatabaseDbmFeaturesManagement) GetDeletionPolicy() xpv1.DeletionPolicy {
 	return mg.Spec.DeletionPolicy
 }
 
-// GetManagementPolicies of this ManagementAutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement.
-func (mg *ManagementAutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement) GetManagementPolicies() xpv1.ManagementPolicies {
+// GetManagementPolicies of this ManagementAutonomousDatabaseDbmFeaturesManagement.
+func (mg *ManagementAutonomousDatabaseDbmFeaturesManagement) GetManagementPolicies() xpv1.ManagementPolicies {
 	return mg.Spec.ManagementPolicies
 }
 
-// GetProviderConfigReference of this ManagementAutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement.
-func (mg *ManagementAutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement) GetProviderConfigReference() *xpv1.Reference {
+// GetProviderConfigReference of this ManagementAutonomousDatabaseDbmFeaturesManagement.
+func (mg *ManagementAutonomousDatabaseDbmFeaturesManagement) GetProviderConfigReference() *xpv1.Reference {
 	return mg.Spec.ProviderConfigReference
 }
 
-// GetPublishConnectionDetailsTo of this ManagementAutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement.
-func (mg *ManagementAutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement) GetPublishConnectionDetailsTo() *xpv1.PublishConnectionDetailsTo {
+// GetPublishConnectionDetailsTo of this ManagementAutonomousDatabaseDbmFeaturesManagement.
+func (mg *ManagementAutonomousDatabaseDbmFeaturesManagement) GetPublishConnectionDetailsTo() *xpv1.PublishConnectionDetailsTo {
 	return mg.Spec.PublishConnectionDetailsTo
 }
 
-// GetWriteConnectionSecretToReference of this ManagementAutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement.
-func (mg *ManagementAutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement) GetWriteConnectionSecretToReference() *xpv1.SecretReference {
+// GetWriteConnectionSecretToReference of this ManagementAutonomousDatabaseDbmFeaturesManagement.
+func (mg *ManagementAutonomousDatabaseDbmFeaturesManagement) GetWriteConnectionSecretToReference() *xpv1.SecretReference {
 	return mg.Spec.WriteConnectionSecretToReference
 }
 
-// SetConditions of this ManagementAutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement.
-func (mg *ManagementAutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement) SetConditions(c ...xpv1.Condition) {
+// SetConditions of this ManagementAutonomousDatabaseDbmFeaturesManagement.
+func (mg *ManagementAutonomousDatabaseDbmFeaturesManagement) SetConditions(c ...xpv1.Condition) {
 	mg.Status.SetConditions(c...)
 }
 
-// SetDeletionPolicy of this ManagementAutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement.
-func (mg *ManagementAutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement) SetDeletionPolicy(r xpv1.DeletionPolicy) {
+// SetDeletionPolicy of this ManagementAutonomousDatabaseDbmFeaturesManagement.
+func (mg *ManagementAutonomousDatabaseDbmFeaturesManagement) SetDeletionPolicy(r xpv1.DeletionPolicy) {
 	mg.Spec.DeletionPolicy = r
 }
 
-// SetManagementPolicies of this ManagementAutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement.
-func (mg *ManagementAutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement) SetManagementPolicies(r xpv1.ManagementPolicies) {
+// SetManagementPolicies of this ManagementAutonomousDatabaseDbmFeaturesManagement.
+func (mg *ManagementAutonomousDatabaseDbmFeaturesManagement) SetManagementPolicies(r xpv1.ManagementPolicies) {
 	mg.Spec.ManagementPolicies = r
 }
 
-// SetProviderConfigReference of this ManagementAutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement.
-func (mg *ManagementAutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement) SetProviderConfigReference(r *xpv1.Reference) {
+// SetProviderConfigReference of this ManagementAutonomousDatabaseDbmFeaturesManagement.
+func (mg *ManagementAutonomousDatabaseDbmFeaturesManagement) SetProviderConfigReference(r *xpv1.Reference) {
 	mg.Spec.ProviderConfigReference = r
 }
 
-// SetPublishConnectionDetailsTo of this ManagementAutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement.
-func (mg *ManagementAutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement) SetPublishConnectionDetailsTo(r *xpv1.PublishConnectionDetailsTo) {
+// SetPublishConnectionDetailsTo of this ManagementAutonomousDatabaseDbmFeaturesManagement.
+func (mg *ManagementAutonomousDatabaseDbmFeaturesManagement) SetPublishConnectionDetailsTo(r *xpv1.PublishConnectionDetailsTo) {
 	mg.Spec.PublishConnectionDetailsTo = r
 }
 
-// SetWriteConnectionSecretToReference of this ManagementAutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement.
-func (mg *ManagementAutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement) SetWriteConnectionSecretToReference(r *xpv1.SecretReference) {
+// SetWriteConnectionSecretToReference of this ManagementAutonomousDatabaseDbmFeaturesManagement.
+func (mg *ManagementAutonomousDatabaseDbmFeaturesManagement) SetWriteConnectionSecretToReference(r *xpv1.SecretReference) {
 	mg.Spec.WriteConnectionSecretToReference = r
 }
 
@@ -5827,243 +5827,243 @@ func (mg *ManagementExternalMySqlDatabaseConnector) SetWriteConnectionSecretToRe
 	mg.Spec.WriteConnectionSecretToReference = r
 }
 
-// GetCondition of this ManagementExternalMySqlDatabaseExternalMysqlDatabasesManagement.
-func (mg *ManagementExternalMySqlDatabaseExternalMysqlDatabasesManagement) GetCondition(ct xpv1.ConditionType) xpv1.Condition {
+// GetCondition of this ManagementExternalMySqlDatabaseExternalMysqlDatabases.
+func (mg *ManagementExternalMySqlDatabaseExternalMysqlDatabases) GetCondition(ct xpv1.ConditionType) xpv1.Condition {
 	return mg.Status.GetCondition(ct)
 }
 
-// GetDeletionPolicy of this ManagementExternalMySqlDatabaseExternalMysqlDatabasesManagement.
-func (mg *ManagementExternalMySqlDatabaseExternalMysqlDatabasesManagement) GetDeletionPolicy() xpv1.DeletionPolicy {
+// GetDeletionPolicy of this ManagementExternalMySqlDatabaseExternalMysqlDatabases.
+func (mg *ManagementExternalMySqlDatabaseExternalMysqlDatabases) GetDeletionPolicy() xpv1.DeletionPolicy {
 	return mg.Spec.DeletionPolicy
 }
 
-// GetManagementPolicies of this ManagementExternalMySqlDatabaseExternalMysqlDatabasesManagement.
-func (mg *ManagementExternalMySqlDatabaseExternalMysqlDatabasesManagement) GetManagementPolicies() xpv1.ManagementPolicies {
+// GetManagementPolicies of this ManagementExternalMySqlDatabaseExternalMysqlDatabases.
+func (mg *ManagementExternalMySqlDatabaseExternalMysqlDatabases) GetManagementPolicies() xpv1.ManagementPolicies {
 	return mg.Spec.ManagementPolicies
 }
 
-// GetProviderConfigReference of this ManagementExternalMySqlDatabaseExternalMysqlDatabasesManagement.
-func (mg *ManagementExternalMySqlDatabaseExternalMysqlDatabasesManagement) GetProviderConfigReference() *xpv1.Reference {
+// GetProviderConfigReference of this ManagementExternalMySqlDatabaseExternalMysqlDatabases.
+func (mg *ManagementExternalMySqlDatabaseExternalMysqlDatabases) GetProviderConfigReference() *xpv1.Reference {
 	return mg.Spec.ProviderConfigReference
 }
 
-// GetPublishConnectionDetailsTo of this ManagementExternalMySqlDatabaseExternalMysqlDatabasesManagement.
-func (mg *ManagementExternalMySqlDatabaseExternalMysqlDatabasesManagement) GetPublishConnectionDetailsTo() *xpv1.PublishConnectionDetailsTo {
+// GetPublishConnectionDetailsTo of this ManagementExternalMySqlDatabaseExternalMysqlDatabases.
+func (mg *ManagementExternalMySqlDatabaseExternalMysqlDatabases) GetPublishConnectionDetailsTo() *xpv1.PublishConnectionDetailsTo {
 	return mg.Spec.PublishConnectionDetailsTo
 }
 
-// GetWriteConnectionSecretToReference of this ManagementExternalMySqlDatabaseExternalMysqlDatabasesManagement.
-func (mg *ManagementExternalMySqlDatabaseExternalMysqlDatabasesManagement) GetWriteConnectionSecretToReference() *xpv1.SecretReference {
+// GetWriteConnectionSecretToReference of this ManagementExternalMySqlDatabaseExternalMysqlDatabases.
+func (mg *ManagementExternalMySqlDatabaseExternalMysqlDatabases) GetWriteConnectionSecretToReference() *xpv1.SecretReference {
 	return mg.Spec.WriteConnectionSecretToReference
 }
 
-// SetConditions of this ManagementExternalMySqlDatabaseExternalMysqlDatabasesManagement.
-func (mg *ManagementExternalMySqlDatabaseExternalMysqlDatabasesManagement) SetConditions(c ...xpv1.Condition) {
+// SetConditions of this ManagementExternalMySqlDatabaseExternalMysqlDatabases.
+func (mg *ManagementExternalMySqlDatabaseExternalMysqlDatabases) SetConditions(c ...xpv1.Condition) {
 	mg.Status.SetConditions(c...)
 }
 
-// SetDeletionPolicy of this ManagementExternalMySqlDatabaseExternalMysqlDatabasesManagement.
-func (mg *ManagementExternalMySqlDatabaseExternalMysqlDatabasesManagement) SetDeletionPolicy(r xpv1.DeletionPolicy) {
+// SetDeletionPolicy of this ManagementExternalMySqlDatabaseExternalMysqlDatabases.
+func (mg *ManagementExternalMySqlDatabaseExternalMysqlDatabases) SetDeletionPolicy(r xpv1.DeletionPolicy) {
 	mg.Spec.DeletionPolicy = r
 }
 
-// SetManagementPolicies of this ManagementExternalMySqlDatabaseExternalMysqlDatabasesManagement.
-func (mg *ManagementExternalMySqlDatabaseExternalMysqlDatabasesManagement) SetManagementPolicies(r xpv1.ManagementPolicies) {
+// SetManagementPolicies of this ManagementExternalMySqlDatabaseExternalMysqlDatabases.
+func (mg *ManagementExternalMySqlDatabaseExternalMysqlDatabases) SetManagementPolicies(r xpv1.ManagementPolicies) {
 	mg.Spec.ManagementPolicies = r
 }
 
-// SetProviderConfigReference of this ManagementExternalMySqlDatabaseExternalMysqlDatabasesManagement.
-func (mg *ManagementExternalMySqlDatabaseExternalMysqlDatabasesManagement) SetProviderConfigReference(r *xpv1.Reference) {
+// SetProviderConfigReference of this ManagementExternalMySqlDatabaseExternalMysqlDatabases.
+func (mg *ManagementExternalMySqlDatabaseExternalMysqlDatabases) SetProviderConfigReference(r *xpv1.Reference) {
 	mg.Spec.ProviderConfigReference = r
 }
 
-// SetPublishConnectionDetailsTo of this ManagementExternalMySqlDatabaseExternalMysqlDatabasesManagement.
-func (mg *ManagementExternalMySqlDatabaseExternalMysqlDatabasesManagement) SetPublishConnectionDetailsTo(r *xpv1.PublishConnectionDetailsTo) {
+// SetPublishConnectionDetailsTo of this ManagementExternalMySqlDatabaseExternalMysqlDatabases.
+func (mg *ManagementExternalMySqlDatabaseExternalMysqlDatabases) SetPublishConnectionDetailsTo(r *xpv1.PublishConnectionDetailsTo) {
 	mg.Spec.PublishConnectionDetailsTo = r
 }
 
-// SetWriteConnectionSecretToReference of this ManagementExternalMySqlDatabaseExternalMysqlDatabasesManagement.
-func (mg *ManagementExternalMySqlDatabaseExternalMysqlDatabasesManagement) SetWriteConnectionSecretToReference(r *xpv1.SecretReference) {
+// SetWriteConnectionSecretToReference of this ManagementExternalMySqlDatabaseExternalMysqlDatabases.
+func (mg *ManagementExternalMySqlDatabaseExternalMysqlDatabases) SetWriteConnectionSecretToReference(r *xpv1.SecretReference) {
 	mg.Spec.WriteConnectionSecretToReference = r
 }
 
-// GetCondition of this ManagementExternalcontainerdatabaseExternalContainerDbmFeaturesManagement.
-func (mg *ManagementExternalcontainerdatabaseExternalContainerDbmFeaturesManagement) GetCondition(ct xpv1.ConditionType) xpv1.Condition {
+// GetCondition of this ManagementExternalcontainerdatabaseDbmFeaturesManagement.
+func (mg *ManagementExternalcontainerdatabaseDbmFeaturesManagement) GetCondition(ct xpv1.ConditionType) xpv1.Condition {
 	return mg.Status.GetCondition(ct)
 }
 
-// GetDeletionPolicy of this ManagementExternalcontainerdatabaseExternalContainerDbmFeaturesManagement.
-func (mg *ManagementExternalcontainerdatabaseExternalContainerDbmFeaturesManagement) GetDeletionPolicy() xpv1.DeletionPolicy {
+// GetDeletionPolicy of this ManagementExternalcontainerdatabaseDbmFeaturesManagement.
+func (mg *ManagementExternalcontainerdatabaseDbmFeaturesManagement) GetDeletionPolicy() xpv1.DeletionPolicy {
 	return mg.Spec.DeletionPolicy
 }
 
-// GetManagementPolicies of this ManagementExternalcontainerdatabaseExternalContainerDbmFeaturesManagement.
-func (mg *ManagementExternalcontainerdatabaseExternalContainerDbmFeaturesManagement) GetManagementPolicies() xpv1.ManagementPolicies {
+// GetManagementPolicies of this ManagementExternalcontainerdatabaseDbmFeaturesManagement.
+func (mg *ManagementExternalcontainerdatabaseDbmFeaturesManagement) GetManagementPolicies() xpv1.ManagementPolicies {
 	return mg.Spec.ManagementPolicies
 }
 
-// GetProviderConfigReference of this ManagementExternalcontainerdatabaseExternalContainerDbmFeaturesManagement.
-func (mg *ManagementExternalcontainerdatabaseExternalContainerDbmFeaturesManagement) GetProviderConfigReference() *xpv1.Reference {
+// GetProviderConfigReference of this ManagementExternalcontainerdatabaseDbmFeaturesManagement.
+func (mg *ManagementExternalcontainerdatabaseDbmFeaturesManagement) GetProviderConfigReference() *xpv1.Reference {
 	return mg.Spec.ProviderConfigReference
 }
 
-// GetPublishConnectionDetailsTo of this ManagementExternalcontainerdatabaseExternalContainerDbmFeaturesManagement.
-func (mg *ManagementExternalcontainerdatabaseExternalContainerDbmFeaturesManagement) GetPublishConnectionDetailsTo() *xpv1.PublishConnectionDetailsTo {
+// GetPublishConnectionDetailsTo of this ManagementExternalcontainerdatabaseDbmFeaturesManagement.
+func (mg *ManagementExternalcontainerdatabaseDbmFeaturesManagement) GetPublishConnectionDetailsTo() *xpv1.PublishConnectionDetailsTo {
 	return mg.Spec.PublishConnectionDetailsTo
 }
 
-// GetWriteConnectionSecretToReference of this ManagementExternalcontainerdatabaseExternalContainerDbmFeaturesManagement.
-func (mg *ManagementExternalcontainerdatabaseExternalContainerDbmFeaturesManagement) GetWriteConnectionSecretToReference() *xpv1.SecretReference {
+// GetWriteConnectionSecretToReference of this ManagementExternalcontainerdatabaseDbmFeaturesManagement.
+func (mg *ManagementExternalcontainerdatabaseDbmFeaturesManagement) GetWriteConnectionSecretToReference() *xpv1.SecretReference {
 	return mg.Spec.WriteConnectionSecretToReference
 }
 
-// SetConditions of this ManagementExternalcontainerdatabaseExternalContainerDbmFeaturesManagement.
-func (mg *ManagementExternalcontainerdatabaseExternalContainerDbmFeaturesManagement) SetConditions(c ...xpv1.Condition) {
+// SetConditions of this ManagementExternalcontainerdatabaseDbmFeaturesManagement.
+func (mg *ManagementExternalcontainerdatabaseDbmFeaturesManagement) SetConditions(c ...xpv1.Condition) {
 	mg.Status.SetConditions(c...)
 }
 
-// SetDeletionPolicy of this ManagementExternalcontainerdatabaseExternalContainerDbmFeaturesManagement.
-func (mg *ManagementExternalcontainerdatabaseExternalContainerDbmFeaturesManagement) SetDeletionPolicy(r xpv1.DeletionPolicy) {
+// SetDeletionPolicy of this ManagementExternalcontainerdatabaseDbmFeaturesManagement.
+func (mg *ManagementExternalcontainerdatabaseDbmFeaturesManagement) SetDeletionPolicy(r xpv1.DeletionPolicy) {
 	mg.Spec.DeletionPolicy = r
 }
 
-// SetManagementPolicies of this ManagementExternalcontainerdatabaseExternalContainerDbmFeaturesManagement.
-func (mg *ManagementExternalcontainerdatabaseExternalContainerDbmFeaturesManagement) SetManagementPolicies(r xpv1.ManagementPolicies) {
+// SetManagementPolicies of this ManagementExternalcontainerdatabaseDbmFeaturesManagement.
+func (mg *ManagementExternalcontainerdatabaseDbmFeaturesManagement) SetManagementPolicies(r xpv1.ManagementPolicies) {
 	mg.Spec.ManagementPolicies = r
 }
 
-// SetProviderConfigReference of this ManagementExternalcontainerdatabaseExternalContainerDbmFeaturesManagement.
-func (mg *ManagementExternalcontainerdatabaseExternalContainerDbmFeaturesManagement) SetProviderConfigReference(r *xpv1.Reference) {
+// SetProviderConfigReference of this ManagementExternalcontainerdatabaseDbmFeaturesManagement.
+func (mg *ManagementExternalcontainerdatabaseDbmFeaturesManagement) SetProviderConfigReference(r *xpv1.Reference) {
 	mg.Spec.ProviderConfigReference = r
 }
 
-// SetPublishConnectionDetailsTo of this ManagementExternalcontainerdatabaseExternalContainerDbmFeaturesManagement.
-func (mg *ManagementExternalcontainerdatabaseExternalContainerDbmFeaturesManagement) SetPublishConnectionDetailsTo(r *xpv1.PublishConnectionDetailsTo) {
+// SetPublishConnectionDetailsTo of this ManagementExternalcontainerdatabaseDbmFeaturesManagement.
+func (mg *ManagementExternalcontainerdatabaseDbmFeaturesManagement) SetPublishConnectionDetailsTo(r *xpv1.PublishConnectionDetailsTo) {
 	mg.Spec.PublishConnectionDetailsTo = r
 }
 
-// SetWriteConnectionSecretToReference of this ManagementExternalcontainerdatabaseExternalContainerDbmFeaturesManagement.
-func (mg *ManagementExternalcontainerdatabaseExternalContainerDbmFeaturesManagement) SetWriteConnectionSecretToReference(r *xpv1.SecretReference) {
+// SetWriteConnectionSecretToReference of this ManagementExternalcontainerdatabaseDbmFeaturesManagement.
+func (mg *ManagementExternalcontainerdatabaseDbmFeaturesManagement) SetWriteConnectionSecretToReference(r *xpv1.SecretReference) {
 	mg.Spec.WriteConnectionSecretToReference = r
 }
 
-// GetCondition of this ManagementExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement.
-func (mg *ManagementExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement) GetCondition(ct xpv1.ConditionType) xpv1.Condition {
+// GetCondition of this ManagementExternalnoncontainerdatabaseDbmFeaturesManagement.
+func (mg *ManagementExternalnoncontainerdatabaseDbmFeaturesManagement) GetCondition(ct xpv1.ConditionType) xpv1.Condition {
 	return mg.Status.GetCondition(ct)
 }
 
-// GetDeletionPolicy of this ManagementExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement.
-func (mg *ManagementExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement) GetDeletionPolicy() xpv1.DeletionPolicy {
+// GetDeletionPolicy of this ManagementExternalnoncontainerdatabaseDbmFeaturesManagement.
+func (mg *ManagementExternalnoncontainerdatabaseDbmFeaturesManagement) GetDeletionPolicy() xpv1.DeletionPolicy {
 	return mg.Spec.DeletionPolicy
 }
 
-// GetManagementPolicies of this ManagementExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement.
-func (mg *ManagementExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement) GetManagementPolicies() xpv1.ManagementPolicies {
+// GetManagementPolicies of this ManagementExternalnoncontainerdatabaseDbmFeaturesManagement.
+func (mg *ManagementExternalnoncontainerdatabaseDbmFeaturesManagement) GetManagementPolicies() xpv1.ManagementPolicies {
 	return mg.Spec.ManagementPolicies
 }
 
-// GetProviderConfigReference of this ManagementExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement.
-func (mg *ManagementExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement) GetProviderConfigReference() *xpv1.Reference {
+// GetProviderConfigReference of this ManagementExternalnoncontainerdatabaseDbmFeaturesManagement.
+func (mg *ManagementExternalnoncontainerdatabaseDbmFeaturesManagement) GetProviderConfigReference() *xpv1.Reference {
 	return mg.Spec.ProviderConfigReference
 }
 
-// GetPublishConnectionDetailsTo of this ManagementExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement.
-func (mg *ManagementExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement) GetPublishConnectionDetailsTo() *xpv1.PublishConnectionDetailsTo {
+// GetPublishConnectionDetailsTo of this ManagementExternalnoncontainerdatabaseDbmFeaturesManagement.
+func (mg *ManagementExternalnoncontainerdatabaseDbmFeaturesManagement) GetPublishConnectionDetailsTo() *xpv1.PublishConnectionDetailsTo {
 	return mg.Spec.PublishConnectionDetailsTo
 }
 
-// GetWriteConnectionSecretToReference of this ManagementExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement.
-func (mg *ManagementExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement) GetWriteConnectionSecretToReference() *xpv1.SecretReference {
+// GetWriteConnectionSecretToReference of this ManagementExternalnoncontainerdatabaseDbmFeaturesManagement.
+func (mg *ManagementExternalnoncontainerdatabaseDbmFeaturesManagement) GetWriteConnectionSecretToReference() *xpv1.SecretReference {
 	return mg.Spec.WriteConnectionSecretToReference
 }
 
-// SetConditions of this ManagementExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement.
-func (mg *ManagementExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement) SetConditions(c ...xpv1.Condition) {
+// SetConditions of this ManagementExternalnoncontainerdatabaseDbmFeaturesManagement.
+func (mg *ManagementExternalnoncontainerdatabaseDbmFeaturesManagement) SetConditions(c ...xpv1.Condition) {
 	mg.Status.SetConditions(c...)
 }
 
-// SetDeletionPolicy of this ManagementExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement.
-func (mg *ManagementExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement) SetDeletionPolicy(r xpv1.DeletionPolicy) {
+// SetDeletionPolicy of this ManagementExternalnoncontainerdatabaseDbmFeaturesManagement.
+func (mg *ManagementExternalnoncontainerdatabaseDbmFeaturesManagement) SetDeletionPolicy(r xpv1.DeletionPolicy) {
 	mg.Spec.DeletionPolicy = r
 }
 
-// SetManagementPolicies of this ManagementExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement.
-func (mg *ManagementExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement) SetManagementPolicies(r xpv1.ManagementPolicies) {
+// SetManagementPolicies of this ManagementExternalnoncontainerdatabaseDbmFeaturesManagement.
+func (mg *ManagementExternalnoncontainerdatabaseDbmFeaturesManagement) SetManagementPolicies(r xpv1.ManagementPolicies) {
 	mg.Spec.ManagementPolicies = r
 }
 
-// SetProviderConfigReference of this ManagementExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement.
-func (mg *ManagementExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement) SetProviderConfigReference(r *xpv1.Reference) {
+// SetProviderConfigReference of this ManagementExternalnoncontainerdatabaseDbmFeaturesManagement.
+func (mg *ManagementExternalnoncontainerdatabaseDbmFeaturesManagement) SetProviderConfigReference(r *xpv1.Reference) {
 	mg.Spec.ProviderConfigReference = r
 }
 
-// SetPublishConnectionDetailsTo of this ManagementExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement.
-func (mg *ManagementExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement) SetPublishConnectionDetailsTo(r *xpv1.PublishConnectionDetailsTo) {
+// SetPublishConnectionDetailsTo of this ManagementExternalnoncontainerdatabaseDbmFeaturesManagement.
+func (mg *ManagementExternalnoncontainerdatabaseDbmFeaturesManagement) SetPublishConnectionDetailsTo(r *xpv1.PublishConnectionDetailsTo) {
 	mg.Spec.PublishConnectionDetailsTo = r
 }
 
-// SetWriteConnectionSecretToReference of this ManagementExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement.
-func (mg *ManagementExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement) SetWriteConnectionSecretToReference(r *xpv1.SecretReference) {
+// SetWriteConnectionSecretToReference of this ManagementExternalnoncontainerdatabaseDbmFeaturesManagement.
+func (mg *ManagementExternalnoncontainerdatabaseDbmFeaturesManagement) SetWriteConnectionSecretToReference(r *xpv1.SecretReference) {
 	mg.Spec.WriteConnectionSecretToReference = r
 }
 
-// GetCondition of this ManagementExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement.
-func (mg *ManagementExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement) GetCondition(ct xpv1.ConditionType) xpv1.Condition {
+// GetCondition of this ManagementExternalpluggabledatabaseDbmFeaturesManagement.
+func (mg *ManagementExternalpluggabledatabaseDbmFeaturesManagement) GetCondition(ct xpv1.ConditionType) xpv1.Condition {
 	return mg.Status.GetCondition(ct)
 }
 
-// GetDeletionPolicy of this ManagementExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement.
-func (mg *ManagementExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement) GetDeletionPolicy() xpv1.DeletionPolicy {
+// GetDeletionPolicy of this ManagementExternalpluggabledatabaseDbmFeaturesManagement.
+func (mg *ManagementExternalpluggabledatabaseDbmFeaturesManagement) GetDeletionPolicy() xpv1.DeletionPolicy {
 	return mg.Spec.DeletionPolicy
 }
 
-// GetManagementPolicies of this ManagementExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement.
-func (mg *ManagementExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement) GetManagementPolicies() xpv1.ManagementPolicies {
+// GetManagementPolicies of this ManagementExternalpluggabledatabaseDbmFeaturesManagement.
+func (mg *ManagementExternalpluggabledatabaseDbmFeaturesManagement) GetManagementPolicies() xpv1.ManagementPolicies {
 	return mg.Spec.ManagementPolicies
 }
 
-// GetProviderConfigReference of this ManagementExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement.
-func (mg *ManagementExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement) GetProviderConfigReference() *xpv1.Reference {
+// GetProviderConfigReference of this ManagementExternalpluggabledatabaseDbmFeaturesManagement.
+func (mg *ManagementExternalpluggabledatabaseDbmFeaturesManagement) GetProviderConfigReference() *xpv1.Reference {
 	return mg.Spec.ProviderConfigReference
 }
 
-// GetPublishConnectionDetailsTo of this ManagementExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement.
-func (mg *ManagementExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement) GetPublishConnectionDetailsTo() *xpv1.PublishConnectionDetailsTo {
+// GetPublishConnectionDetailsTo of this ManagementExternalpluggabledatabaseDbmFeaturesManagement.
+func (mg *ManagementExternalpluggabledatabaseDbmFeaturesManagement) GetPublishConnectionDetailsTo() *xpv1.PublishConnectionDetailsTo {
 	return mg.Spec.PublishConnectionDetailsTo
 }
 
-// GetWriteConnectionSecretToReference of this ManagementExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement.
-func (mg *ManagementExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement) GetWriteConnectionSecretToReference() *xpv1.SecretReference {
+// GetWriteConnectionSecretToReference of this ManagementExternalpluggabledatabaseDbmFeaturesManagement.
+func (mg *ManagementExternalpluggabledatabaseDbmFeaturesManagement) GetWriteConnectionSecretToReference() *xpv1.SecretReference {
 	return mg.Spec.WriteConnectionSecretToReference
 }
 
-// SetConditions of this ManagementExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement.
-func (mg *ManagementExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement) SetConditions(c ...xpv1.Condition) {
+// SetConditions of this ManagementExternalpluggabledatabaseDbmFeaturesManagement.
+func (mg *ManagementExternalpluggabledatabaseDbmFeaturesManagement) SetConditions(c ...xpv1.Condition) {
 	mg.Status.SetConditions(c...)
 }
 
-// SetDeletionPolicy of this ManagementExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement.
-func (mg *ManagementExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement) SetDeletionPolicy(r xpv1.DeletionPolicy) {
+// SetDeletionPolicy of this ManagementExternalpluggabledatabaseDbmFeaturesManagement.
+func (mg *ManagementExternalpluggabledatabaseDbmFeaturesManagement) SetDeletionPolicy(r xpv1.DeletionPolicy) {
 	mg.Spec.DeletionPolicy = r
 }
 
-// SetManagementPolicies of this ManagementExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement.
-func (mg *ManagementExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement) SetManagementPolicies(r xpv1.ManagementPolicies) {
+// SetManagementPolicies of this ManagementExternalpluggabledatabaseDbmFeaturesManagement.
+func (mg *ManagementExternalpluggabledatabaseDbmFeaturesManagement) SetManagementPolicies(r xpv1.ManagementPolicies) {
 	mg.Spec.ManagementPolicies = r
 }
 
-// SetProviderConfigReference of this ManagementExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement.
-func (mg *ManagementExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement) SetProviderConfigReference(r *xpv1.Reference) {
+// SetProviderConfigReference of this ManagementExternalpluggabledatabaseDbmFeaturesManagement.
+func (mg *ManagementExternalpluggabledatabaseDbmFeaturesManagement) SetProviderConfigReference(r *xpv1.Reference) {
 	mg.Spec.ProviderConfigReference = r
 }
 
-// SetPublishConnectionDetailsTo of this ManagementExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement.
-func (mg *ManagementExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement) SetPublishConnectionDetailsTo(r *xpv1.PublishConnectionDetailsTo) {
+// SetPublishConnectionDetailsTo of this ManagementExternalpluggabledatabaseDbmFeaturesManagement.
+func (mg *ManagementExternalpluggabledatabaseDbmFeaturesManagement) SetPublishConnectionDetailsTo(r *xpv1.PublishConnectionDetailsTo) {
 	mg.Spec.PublishConnectionDetailsTo = r
 }
 
-// SetWriteConnectionSecretToReference of this ManagementExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement.
-func (mg *ManagementExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement) SetWriteConnectionSecretToReference(r *xpv1.SecretReference) {
+// SetWriteConnectionSecretToReference of this ManagementExternalpluggabledatabaseDbmFeaturesManagement.
+func (mg *ManagementExternalpluggabledatabaseDbmFeaturesManagement) SetWriteConnectionSecretToReference(r *xpv1.SecretReference) {
 	mg.Spec.WriteConnectionSecretToReference = r
 }
 
@@ -6367,63 +6367,63 @@ func (mg *ManagementNamedCredential) SetWriteConnectionSecretToReference(r *xpv1
 	mg.Spec.WriteConnectionSecretToReference = r
 }
 
-// GetCondition of this ManagementPluggabledatabasePluggableDatabaseDbmFeaturesManagement.
-func (mg *ManagementPluggabledatabasePluggableDatabaseDbmFeaturesManagement) GetCondition(ct xpv1.ConditionType) xpv1.Condition {
+// GetCondition of this ManagementPluggabledatabaseDbmFeaturesManagement.
+func (mg *ManagementPluggabledatabaseDbmFeaturesManagement) GetCondition(ct xpv1.ConditionType) xpv1.Condition {
 	return mg.Status.GetCondition(ct)
 }
 
-// GetDeletionPolicy of this ManagementPluggabledatabasePluggableDatabaseDbmFeaturesManagement.
-func (mg *ManagementPluggabledatabasePluggableDatabaseDbmFeaturesManagement) GetDeletionPolicy() xpv1.DeletionPolicy {
+// GetDeletionPolicy of this ManagementPluggabledatabaseDbmFeaturesManagement.
+func (mg *ManagementPluggabledatabaseDbmFeaturesManagement) GetDeletionPolicy() xpv1.DeletionPolicy {
 	return mg.Spec.DeletionPolicy
 }
 
-// GetManagementPolicies of this ManagementPluggabledatabasePluggableDatabaseDbmFeaturesManagement.
-func (mg *ManagementPluggabledatabasePluggableDatabaseDbmFeaturesManagement) GetManagementPolicies() xpv1.ManagementPolicies {
+// GetManagementPolicies of this ManagementPluggabledatabaseDbmFeaturesManagement.
+func (mg *ManagementPluggabledatabaseDbmFeaturesManagement) GetManagementPolicies() xpv1.ManagementPolicies {
 	return mg.Spec.ManagementPolicies
 }
 
-// GetProviderConfigReference of this ManagementPluggabledatabasePluggableDatabaseDbmFeaturesManagement.
-func (mg *ManagementPluggabledatabasePluggableDatabaseDbmFeaturesManagement) GetProviderConfigReference() *xpv1.Reference {
+// GetProviderConfigReference of this ManagementPluggabledatabaseDbmFeaturesManagement.
+func (mg *ManagementPluggabledatabaseDbmFeaturesManagement) GetProviderConfigReference() *xpv1.Reference {
 	return mg.Spec.ProviderConfigReference
 }
 
-// GetPublishConnectionDetailsTo of this ManagementPluggabledatabasePluggableDatabaseDbmFeaturesManagement.
-func (mg *ManagementPluggabledatabasePluggableDatabaseDbmFeaturesManagement) GetPublishConnectionDetailsTo() *xpv1.PublishConnectionDetailsTo {
+// GetPublishConnectionDetailsTo of this ManagementPluggabledatabaseDbmFeaturesManagement.
+func (mg *ManagementPluggabledatabaseDbmFeaturesManagement) GetPublishConnectionDetailsTo() *xpv1.PublishConnectionDetailsTo {
 	return mg.Spec.PublishConnectionDetailsTo
 }
 
-// GetWriteConnectionSecretToReference of this ManagementPluggabledatabasePluggableDatabaseDbmFeaturesManagement.
-func (mg *ManagementPluggabledatabasePluggableDatabaseDbmFeaturesManagement) GetWriteConnectionSecretToReference() *xpv1.SecretReference {
+// GetWriteConnectionSecretToReference of this ManagementPluggabledatabaseDbmFeaturesManagement.
+func (mg *ManagementPluggabledatabaseDbmFeaturesManagement) GetWriteConnectionSecretToReference() *xpv1.SecretReference {
 	return mg.Spec.WriteConnectionSecretToReference
 }
 
-// SetConditions of this ManagementPluggabledatabasePluggableDatabaseDbmFeaturesManagement.
-func (mg *ManagementPluggabledatabasePluggableDatabaseDbmFeaturesManagement) SetConditions(c ...xpv1.Condition) {
+// SetConditions of this ManagementPluggabledatabaseDbmFeaturesManagement.
+func (mg *ManagementPluggabledatabaseDbmFeaturesManagement) SetConditions(c ...xpv1.Condition) {
 	mg.Status.SetConditions(c...)
 }
 
-// SetDeletionPolicy of this ManagementPluggabledatabasePluggableDatabaseDbmFeaturesManagement.
-func (mg *ManagementPluggabledatabasePluggableDatabaseDbmFeaturesManagement) SetDeletionPolicy(r xpv1.DeletionPolicy) {
+// SetDeletionPolicy of this ManagementPluggabledatabaseDbmFeaturesManagement.
+func (mg *ManagementPluggabledatabaseDbmFeaturesManagement) SetDeletionPolicy(r xpv1.DeletionPolicy) {
 	mg.Spec.DeletionPolicy = r
 }
 
-// SetManagementPolicies of this ManagementPluggabledatabasePluggableDatabaseDbmFeaturesManagement.
-func (mg *ManagementPluggabledatabasePluggableDatabaseDbmFeaturesManagement) SetManagementPolicies(r xpv1.ManagementPolicies) {
+// SetManagementPolicies of this ManagementPluggabledatabaseDbmFeaturesManagement.
+func (mg *ManagementPluggabledatabaseDbmFeaturesManagement) SetManagementPolicies(r xpv1.ManagementPolicies) {
 	mg.Spec.ManagementPolicies = r
 }
 
-// SetProviderConfigReference of this ManagementPluggabledatabasePluggableDatabaseDbmFeaturesManagement.
-func (mg *ManagementPluggabledatabasePluggableDatabaseDbmFeaturesManagement) SetProviderConfigReference(r *xpv1.Reference) {
+// SetProviderConfigReference of this ManagementPluggabledatabaseDbmFeaturesManagement.
+func (mg *ManagementPluggabledatabaseDbmFeaturesManagement) SetProviderConfigReference(r *xpv1.Reference) {
 	mg.Spec.ProviderConfigReference = r
 }
 
-// SetPublishConnectionDetailsTo of this ManagementPluggabledatabasePluggableDatabaseDbmFeaturesManagement.
-func (mg *ManagementPluggabledatabasePluggableDatabaseDbmFeaturesManagement) SetPublishConnectionDetailsTo(r *xpv1.PublishConnectionDetailsTo) {
+// SetPublishConnectionDetailsTo of this ManagementPluggabledatabaseDbmFeaturesManagement.
+func (mg *ManagementPluggabledatabaseDbmFeaturesManagement) SetPublishConnectionDetailsTo(r *xpv1.PublishConnectionDetailsTo) {
 	mg.Spec.PublishConnectionDetailsTo = r
 }
 
-// SetWriteConnectionSecretToReference of this ManagementPluggabledatabasePluggableDatabaseDbmFeaturesManagement.
-func (mg *ManagementPluggabledatabasePluggableDatabaseDbmFeaturesManagement) SetWriteConnectionSecretToReference(r *xpv1.SecretReference) {
+// SetWriteConnectionSecretToReference of this ManagementPluggabledatabaseDbmFeaturesManagement.
+func (mg *ManagementPluggabledatabaseDbmFeaturesManagement) SetWriteConnectionSecretToReference(r *xpv1.SecretReference) {
 	mg.Spec.WriteConnectionSecretToReference = r
 }
 

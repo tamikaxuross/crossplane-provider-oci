@@ -58,7 +58,7 @@ func (tr *MonitoringTemplate) Hub() {}
 func (tr *MonitoringTemplateAlarmCondition) Hub() {}
 
 // Hub marks this type as a conversion hub.
-func (tr *MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement) Hub() {}
+func (tr *MonitoringTemplateOnGivenResourcesManagement) Hub() {}
 
 // Hub marks this type as a conversion hub.
 func (tr *ProcessSet) Hub() {}

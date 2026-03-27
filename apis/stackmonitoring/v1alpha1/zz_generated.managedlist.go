@@ -160,8 +160,8 @@ func (l *MonitoringTemplateList) GetItems() []resource.Managed {
 	return items
 }
 
-// GetItems of this MonitoringTemplateMonitoringTemplateOnGivenResourcesManagementList.
-func (l *MonitoringTemplateMonitoringTemplateOnGivenResourcesManagementList) GetItems() []resource.Managed {
+// GetItems of this MonitoringTemplateOnGivenResourcesManagementList.
+func (l *MonitoringTemplateOnGivenResourcesManagementList) GetItems() []resource.Managed {
 	items := make([]resource.Managed, len(l.Items))
 	for i := range l.Items {
 		items[i] = &l.Items[i]
