@@ -25,6 +25,11 @@ import (
 	"github.com/crossplane/upjet/pkg/config"
 )
 
+const (
+	maxKubernetesNameLength    = 63
+	maxGeneratedKindNameLength = maxKubernetesNameLength - len("List")
+)
+
 // ProblematicResources returns a list of regex patterns for resources that should be
 // skipped during generation due to known issues or incompatibilities.
 // These resources can be added to support later after resolving their specific issues.
@@ -491,14 +496,20 @@ func generateKindName(resourceName, group string) string {
 		return resourceName
 	}
 
-	kindTokens := tokens[start:]
+	kindTokens := make([]string, 0, len(tokens[start:]))
+	for _, token := range tokens[start:] {
+		if token == "" {
+			continue
+		}
+		kindTokens = append(kindTokens, token)
+	}
+	if len(kindTokens) == 0 {
+		return resourceName
+	}
 
 	titleCaser := cases.Title(language.Und)
 	var b strings.Builder
 	for _, t := range kindTokens {
-		if t == "" {
-			continue
-		}
 		b.WriteString(titleCaser.String(t))
 	}
 
@@ -506,7 +517,79 @@ func generateKindName(resourceName, group string) string {
 		return resourceName
 	}
 
-	return b.String()
+	kindName := b.String()
+	if len(kindName) > maxGeneratedKindNameLength {
+		return removeLongestDuplicateSubstring(kindTokens)
+	}
+
+	return kindName
+}
+
+// removeLongestDuplicateSubstring shortens long generated kinds by removing the
+// latest duplicated token window whose normalized form already appears earlier
+// in the same name. This keeps the logic generic for overlong kinds without
+// hardcoding resource-specific cases.
+func removeLongestDuplicateSubstring(kindTokens []string) string {
+	titleCaser := cases.Title(language.Und)
+	render := func(tokens []string) string {
+		var b strings.Builder
+		for _, token := range tokens {
+			b.WriteString(titleCaser.String(token))
+		}
+		return b.String()
+	}
+
+	tokens := append([]string(nil), kindTokens...)
+	kindName := render(tokens)
+	for len(kindName) > maxGeneratedKindNameLength {
+		bestStart := -1
+		bestEnd := -1
+		bestLength := 0
+		bestWindowSize := 0
+
+		for start := 1; start < len(tokens); start++ {
+			prefix := strings.ToLower(strings.Join(tokens[:start], ""))
+			if prefix == "" {
+				continue
+			}
+
+			var candidate strings.Builder
+			for end := start; end < len(tokens); end++ {
+				candidate.WriteString(strings.ToLower(tokens[end]))
+				normalized := candidate.String()
+				if normalized == "" || !strings.Contains(prefix, normalized) {
+					continue
+				}
+
+				if start > 0 && end < len(tokens)-1 {
+					left := strings.ToLower(tokens[start-1])
+					right := strings.ToLower(tokens[end+1])
+					if left != "" && right != "" && (strings.Contains(left, right) || strings.Contains(right, left)) {
+						continue
+					}
+				}
+
+				windowSize := end - start + 1
+				if len(normalized) > bestLength ||
+					(len(normalized) == bestLength && windowSize > bestWindowSize) ||
+					(len(normalized) == bestLength && windowSize == bestWindowSize && start > bestStart) {
+					bestStart = start
+					bestEnd = end
+					bestLength = len(normalized)
+					bestWindowSize = windowSize
+				}
+			}
+		}
+
+		if bestStart == -1 {
+			return kindName
+		}
+
+		tokens = append(tokens[:bestStart], tokens[bestEnd+1:]...)
+		kindName = render(tokens)
+	}
+
+	return kindName
 }
 
 // contains checks if the resource name contains any of the given patterns
