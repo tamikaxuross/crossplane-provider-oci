@@ -1070,8 +1070,8 @@ func (mg *MonitoringTemplateAlarmCondition) ResolveReferences(ctx context.Contex
 	return nil
 }
 
-// ResolveReferences of this MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement.
-func (mg *MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement) ResolveReferences(ctx context.Context, c client.Reader) error {
+// ResolveReferences of this MonitoringTemplateOnGivenResourcesManagement.
+func (mg *MonitoringTemplateOnGivenResourcesManagement) ResolveReferences(ctx context.Context, c client.Reader) error {
 	var m xpresource.Managed
 	var l xpresource.ManagedList
 	r := reference.NewAPIResolver(c, mg)

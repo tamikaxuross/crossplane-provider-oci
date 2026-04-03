@@ -22,19 +22,42 @@ import (
 	"github.com/crossplane/upjet/pkg/config"
 )
 
-// TestGroupMapCompleteness verifies that all resources in ExternalNameConfigs
-// have corresponding entries in GroupMap
-func TestGroupMapCompleteness(t *testing.T) {
-	missing := []string{}
-	
-	for resourceName := range ExternalNameConfigs {
-		if _, exists := GroupMap[resourceName]; !exists {
-			missing = append(missing, resourceName)
+func assertValidGroupAndKind(t *testing.T, resourceName, group, kind string) {
+	t.Helper()
+
+	if group == "" {
+		t.Errorf("Resource %s has empty group", resourceName)
+	}
+
+	if kind == "" {
+		t.Errorf("Resource %s has empty kind", resourceName)
+		return
+	}
+
+	for _, char := range group {
+		if char == '_' {
+			t.Errorf("Resource %s has invalid group name %s (contains underscore)", resourceName, group)
 		}
 	}
-	
-	if len(missing) > 0 {
-		t.Errorf("GroupMap is missing entries for %d resources: %v", len(missing), missing)
+
+	if kind[0] < 'A' || kind[0] > 'Z' {
+		t.Errorf("Resource %s has invalid kind name %s (should start with uppercase)", resourceName, kind)
+	}
+}
+
+// TestGroupKindOverridesResolvesExternalNameConfiguredResources verifies that
+// every manually configured resource can still resolve through the actual
+// GroupKindOverrides path, whether it uses GroupMap or ServiceGroupDetector.
+func TestGroupKindOverridesResolvesExternalNameConfiguredResources(t *testing.T) {
+	override := GroupKindOverrides()
+
+	for resourceName := range ExternalNameConfigs {
+		resourceName := resourceName
+		t.Run(resourceName, func(t *testing.T) {
+			resource := &config.Resource{Name: resourceName}
+			override(resource)
+			assertValidGroupAndKind(t, resourceName, resource.ShortGroup, resource.Kind)
+		})
 	}
 }
 
@@ -42,28 +65,8 @@ func TestGroupMapCompleteness(t *testing.T) {
 func TestGroupMapValidity(t *testing.T) {
 	for resourceName, calculator := range GroupMap {
 		group, kind := calculator(resourceName)
-		
-		// Verify group is not empty
-		if group == "" {
-			t.Errorf("Resource %s has empty group", resourceName)
-		}
-		
-		// Verify kind is not empty
-		if kind == "" {
-			t.Errorf("Resource %s has empty kind", resourceName)
-		}
-		
-		// Verify group follows naming convention (lowercase, no underscores)
-		for _, char := range group {
-			if char == '_' {
-				t.Errorf("Resource %s has invalid group name %s (contains underscore)", resourceName, group)
-			}
-		}
-		
-		// Verify kind follows naming convention (PascalCase)
-		if len(kind) > 0 && kind[0] < 'A' || kind[0] > 'Z' {
-			t.Errorf("Resource %s has invalid kind name %s (should start with uppercase)", resourceName, kind)
-		}
+
+		assertValidGroupAndKind(t, resourceName, group, kind)
 	}
 }
 
@@ -138,7 +141,7 @@ func TestServiceGroupings(t *testing.T) {
 			"oci_core_ipsec_connection_tunnel_management",
 		},
 	}
-	
+
 	for expectedGroup, resources := range expectedGroups {
 		for _, resourceName := range resources {
 			if calculator, exists := GroupMap[resourceName]; exists {
@@ -159,53 +162,93 @@ func TestGroupKindOverrides(t *testing.T) {
 	testResource := &config.Resource{
 		Name: "oci_core_instance",
 	}
-	
+
 	// Apply the GroupKindOverrides function
 	override := GroupKindOverrides()
 	override(testResource)
-	
+
 	// Verify the override was applied
 	if testResource.ShortGroup != "compute" {
 		t.Errorf("Expected ShortGroup to be 'compute', got '%s'", testResource.ShortGroup)
 	}
-	
+
 	if testResource.Kind != "Instance" {
 		t.Errorf("Expected Kind to be 'Instance', got '%s'", testResource.Kind)
 	}
 }
 
-// TestAllResourcesHaveGroupMapping verifies each resource from ExternalNameConfigs
-// has a valid group mapping and no resources are missed
-func TestAllResourcesHaveGroupMapping(t *testing.T) {
-	totalResourcesInExternalName := len(ExternalNameConfigs)
-	totalResourcesInGroupMap := len(GroupMap)
-	
-	if totalResourcesInExternalName != totalResourcesInGroupMap {
-		t.Errorf("Mismatch in resource count. ExternalNameConfigs has %d resources, GroupMap has %d resources", 
-			totalResourcesInExternalName, totalResourcesInGroupMap)
+// TestGroupKindOverridesTruncatesLongAutoDetectedKinds verifies that the
+// auto-detected path keeps generated kinds within the Kubernetes name budget.
+func TestGroupKindOverridesTruncatesLongAutoDetectedKinds(t *testing.T) {
+	testCases := []struct {
+		resourceName string
+		wantGroup    string
+		wantKind     string
+	}{
+		{
+			resourceName: "oci_database_management_autonomous_database_autonomous_database_dbm_features_management",
+			wantGroup:    "database",
+			wantKind:     "ManagementAutonomousDatabaseDbmFeaturesManagement",
+		},
+		{
+			resourceName: "oci_database_management_externalcontainerdatabase_external_container_dbm_features_management",
+			wantGroup:    "database",
+			wantKind:     "ManagementExternalcontainerdatabaseDbmFeaturesManagement",
+		},
+		{
+			resourceName: "oci_database_management_external_my_sql_database_external_mysql_databases_management",
+			wantGroup:    "database",
+			wantKind:     "ManagementExternalMySqlDatabaseExternalMysqlDatabases",
+		},
+		{
+			resourceName: "oci_database_management_externalnoncontainerdatabase_external_non_container_dbm_features_management",
+			wantGroup:    "database",
+			wantKind:     "ManagementExternalnoncontainerdatabaseDbmFeaturesManagement",
+		},
+		{
+			resourceName: "oci_database_management_externalpluggabledatabase_external_pluggable_dbm_features_management",
+			wantGroup:    "database",
+			wantKind:     "ManagementExternalpluggabledatabaseDbmFeaturesManagement",
+		},
+		{
+			resourceName: "oci_database_management_pluggabledatabase_pluggable_database_dbm_features_management",
+			wantGroup:    "database",
+			wantKind:     "ManagementPluggabledatabaseDbmFeaturesManagement",
+		},
 	}
-	
-	// Verify every resource in ExternalNameConfigs is in GroupMap
-	for resourceName := range ExternalNameConfigs {
-		if _, exists := GroupMap[resourceName]; !exists {
-			t.Errorf("Resource %s exists in ExternalNameConfigs but not in GroupMap", resourceName)
-		}
-	}
-	
-	// Verify every resource in GroupMap exists in ExternalNameConfigs
-	for resourceName := range GroupMap {
-		if _, exists := ExternalNameConfigs[resourceName]; !exists {
-			t.Errorf("Resource %s exists in GroupMap but not in ExternalNameConfigs", resourceName)
-		}
+
+	override := GroupKindOverrides()
+	for _, tc := range testCases {
+		tc := tc
+		t.Run(tc.resourceName, func(t *testing.T) {
+			resource := &config.Resource{Name: tc.resourceName}
+			override(resource)
+
+			if resource.ShortGroup != tc.wantGroup {
+				t.Fatalf("GroupKindOverrides(%q) group = %q, want %q", tc.resourceName, resource.ShortGroup, tc.wantGroup)
+			}
+
+			if resource.Kind != tc.wantKind {
+				t.Fatalf("GroupKindOverrides(%q) kind = %q, want %q", tc.resourceName, resource.Kind, tc.wantKind)
+			}
+
+			if len(resource.Kind) > maxGeneratedKindNameLength {
+				t.Fatalf("GroupKindOverrides(%q) kind length = %d, want <= %d", tc.resourceName, len(resource.Kind), maxGeneratedKindNameLength)
+			}
+
+			if len(resource.Kind+"List") > maxKubernetesNameLength {
+				t.Fatalf("GroupKindOverrides(%q) list kind length = %d, want <= %d", tc.resourceName, len(resource.Kind+"List"), maxKubernetesNameLength)
+			}
+		})
 	}
 }
 
 // TestSpecificServiceMappings tests specific service mappings to ensure correctness
 func TestSpecificServiceMappings(t *testing.T) {
 	testCases := []struct {
-		resourceName    string
-		expectedGroup   string
-		expectedKind    string
+		resourceName  string
+		expectedGroup string
+		expectedKind  string
 	}{
 		{"oci_core_instance", "compute", "Instance"},
 		{"oci_core_vcn", "networking", "Vcn"},
@@ -219,7 +262,7 @@ func TestSpecificServiceMappings(t *testing.T) {
 		{"oci_load_balancer_load_balancer", "loadbalancer", "LoadBalancer"},
 		{"oci_network_load_balancer_network_load_balancer", "networkloadbalancer", "NetworkLoadBalancer"},
 	}
-	
+
 	for _, tc := range testCases {
 		if calculator, exists := GroupMap[tc.resourceName]; exists {
 			group, kind := calculator(tc.resourceName)

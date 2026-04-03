@@ -1027,63 +1027,63 @@ func (mg *MonitoringTemplateAlarmCondition) SetWriteConnectionSecretToReference(
 	mg.Spec.WriteConnectionSecretToReference = r
 }
 
-// GetCondition of this MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement.
-func (mg *MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement) GetCondition(ct xpv1.ConditionType) xpv1.Condition {
+// GetCondition of this MonitoringTemplateOnGivenResourcesManagement.
+func (mg *MonitoringTemplateOnGivenResourcesManagement) GetCondition(ct xpv1.ConditionType) xpv1.Condition {
 	return mg.Status.GetCondition(ct)
 }
 
-// GetDeletionPolicy of this MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement.
-func (mg *MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement) GetDeletionPolicy() xpv1.DeletionPolicy {
+// GetDeletionPolicy of this MonitoringTemplateOnGivenResourcesManagement.
+func (mg *MonitoringTemplateOnGivenResourcesManagement) GetDeletionPolicy() xpv1.DeletionPolicy {
 	return mg.Spec.DeletionPolicy
 }
 
-// GetManagementPolicies of this MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement.
-func (mg *MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement) GetManagementPolicies() xpv1.ManagementPolicies {
+// GetManagementPolicies of this MonitoringTemplateOnGivenResourcesManagement.
+func (mg *MonitoringTemplateOnGivenResourcesManagement) GetManagementPolicies() xpv1.ManagementPolicies {
 	return mg.Spec.ManagementPolicies
 }
 
-// GetProviderConfigReference of this MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement.
-func (mg *MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement) GetProviderConfigReference() *xpv1.Reference {
+// GetProviderConfigReference of this MonitoringTemplateOnGivenResourcesManagement.
+func (mg *MonitoringTemplateOnGivenResourcesManagement) GetProviderConfigReference() *xpv1.Reference {
 	return mg.Spec.ProviderConfigReference
 }
 
-// GetPublishConnectionDetailsTo of this MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement.
-func (mg *MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement) GetPublishConnectionDetailsTo() *xpv1.PublishConnectionDetailsTo {
+// GetPublishConnectionDetailsTo of this MonitoringTemplateOnGivenResourcesManagement.
+func (mg *MonitoringTemplateOnGivenResourcesManagement) GetPublishConnectionDetailsTo() *xpv1.PublishConnectionDetailsTo {
 	return mg.Spec.PublishConnectionDetailsTo
 }
 
-// GetWriteConnectionSecretToReference of this MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement.
-func (mg *MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement) GetWriteConnectionSecretToReference() *xpv1.SecretReference {
+// GetWriteConnectionSecretToReference of this MonitoringTemplateOnGivenResourcesManagement.
+func (mg *MonitoringTemplateOnGivenResourcesManagement) GetWriteConnectionSecretToReference() *xpv1.SecretReference {
 	return mg.Spec.WriteConnectionSecretToReference
 }
 
-// SetConditions of this MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement.
-func (mg *MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement) SetConditions(c ...xpv1.Condition) {
+// SetConditions of this MonitoringTemplateOnGivenResourcesManagement.
+func (mg *MonitoringTemplateOnGivenResourcesManagement) SetConditions(c ...xpv1.Condition) {
 	mg.Status.SetConditions(c...)
 }
 
-// SetDeletionPolicy of this MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement.
-func (mg *MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement) SetDeletionPolicy(r xpv1.DeletionPolicy) {
+// SetDeletionPolicy of this MonitoringTemplateOnGivenResourcesManagement.
+func (mg *MonitoringTemplateOnGivenResourcesManagement) SetDeletionPolicy(r xpv1.DeletionPolicy) {
 	mg.Spec.DeletionPolicy = r
 }
 
-// SetManagementPolicies of this MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement.
-func (mg *MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement) SetManagementPolicies(r xpv1.ManagementPolicies) {
+// SetManagementPolicies of this MonitoringTemplateOnGivenResourcesManagement.
+func (mg *MonitoringTemplateOnGivenResourcesManagement) SetManagementPolicies(r xpv1.ManagementPolicies) {
 	mg.Spec.ManagementPolicies = r
 }
 
-// SetProviderConfigReference of this MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement.
-func (mg *MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement) SetProviderConfigReference(r *xpv1.Reference) {
+// SetProviderConfigReference of this MonitoringTemplateOnGivenResourcesManagement.
+func (mg *MonitoringTemplateOnGivenResourcesManagement) SetProviderConfigReference(r *xpv1.Reference) {
 	mg.Spec.ProviderConfigReference = r
 }
 
-// SetPublishConnectionDetailsTo of this MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement.
-func (mg *MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement) SetPublishConnectionDetailsTo(r *xpv1.PublishConnectionDetailsTo) {
+// SetPublishConnectionDetailsTo of this MonitoringTemplateOnGivenResourcesManagement.
+func (mg *MonitoringTemplateOnGivenResourcesManagement) SetPublishConnectionDetailsTo(r *xpv1.PublishConnectionDetailsTo) {
 	mg.Spec.PublishConnectionDetailsTo = r
 }
 
-// SetWriteConnectionSecretToReference of this MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement.
-func (mg *MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement) SetWriteConnectionSecretToReference(r *xpv1.SecretReference) {
+// SetWriteConnectionSecretToReference of this MonitoringTemplateOnGivenResourcesManagement.
+func (mg *MonitoringTemplateOnGivenResourcesManagement) SetWriteConnectionSecretToReference(r *xpv1.SecretReference) {
 	mg.Spec.WriteConnectionSecretToReference = r
 }
 

@@ -574,8 +574,8 @@ func (l *MaintenanceRunList) GetItems() []resource.Managed {
 	return items
 }
 
-// GetItems of this ManagementAutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementList.
-func (l *ManagementAutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementList) GetItems() []resource.Managed {
+// GetItems of this ManagementAutonomousDatabaseDbmFeaturesManagementList.
+func (l *ManagementAutonomousDatabaseDbmFeaturesManagementList) GetItems() []resource.Managed {
 	items := make([]resource.Managed, len(l.Items))
 	for i := range l.Items {
 		items[i] = &l.Items[i]
@@ -871,8 +871,8 @@ func (l *ManagementExternalMySqlDatabaseConnectorList) GetItems() []resource.Man
 	return items
 }
 
-// GetItems of this ManagementExternalMySqlDatabaseExternalMysqlDatabasesManagementList.
-func (l *ManagementExternalMySqlDatabaseExternalMysqlDatabasesManagementList) GetItems() []resource.Managed {
+// GetItems of this ManagementExternalMySqlDatabaseExternalMysqlDatabasesList.
+func (l *ManagementExternalMySqlDatabaseExternalMysqlDatabasesList) GetItems() []resource.Managed {
 	items := make([]resource.Managed, len(l.Items))
 	for i := range l.Items {
 		items[i] = &l.Items[i]
@@ -889,8 +889,8 @@ func (l *ManagementExternalMySqlDatabaseList) GetItems() []resource.Managed {
 	return items
 }
 
-// GetItems of this ManagementExternalcontainerdatabaseExternalContainerDbmFeaturesManagementList.
-func (l *ManagementExternalcontainerdatabaseExternalContainerDbmFeaturesManagementList) GetItems() []resource.Managed {
+// GetItems of this ManagementExternalcontainerdatabaseDbmFeaturesManagementList.
+func (l *ManagementExternalcontainerdatabaseDbmFeaturesManagementList) GetItems() []resource.Managed {
 	items := make([]resource.Managed, len(l.Items))
 	for i := range l.Items {
 		items[i] = &l.Items[i]
@@ -898,8 +898,8 @@ func (l *ManagementExternalcontainerdatabaseExternalContainerDbmFeaturesManageme
 	return items
 }
 
-// GetItems of this ManagementExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementList.
-func (l *ManagementExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementList) GetItems() []resource.Managed {
+// GetItems of this ManagementExternalnoncontainerdatabaseDbmFeaturesManagementList.
+func (l *ManagementExternalnoncontainerdatabaseDbmFeaturesManagementList) GetItems() []resource.Managed {
 	items := make([]resource.Managed, len(l.Items))
 	for i := range l.Items {
 		items[i] = &l.Items[i]
@@ -907,8 +907,8 @@ func (l *ManagementExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesMa
 	return items
 }
 
-// GetItems of this ManagementExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementList.
-func (l *ManagementExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementList) GetItems() []resource.Managed {
+// GetItems of this ManagementExternalpluggabledatabaseDbmFeaturesManagementList.
+func (l *ManagementExternalpluggabledatabaseDbmFeaturesManagementList) GetItems() []resource.Managed {
 	items := make([]resource.Managed, len(l.Items))
 	for i := range l.Items {
 		items[i] = &l.Items[i]
@@ -961,8 +961,8 @@ func (l *ManagementNamedCredentialList) GetItems() []resource.Managed {
 	return items
 }
 
-// GetItems of this ManagementPluggabledatabasePluggableDatabaseDbmFeaturesManagementList.
-func (l *ManagementPluggabledatabasePluggableDatabaseDbmFeaturesManagementList) GetItems() []resource.Managed {
+// GetItems of this ManagementPluggabledatabaseDbmFeaturesManagementList.
+func (l *ManagementPluggabledatabaseDbmFeaturesManagementList) GetItems() []resource.Managed {
 	items := make([]resource.Managed, len(l.Items))
 	for i := range l.Items {
 		items[i] = &l.Items[i]

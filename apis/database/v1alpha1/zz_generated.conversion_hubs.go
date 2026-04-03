@@ -196,7 +196,7 @@ func (tr *KeyStore) Hub() {}
 func (tr *MaintenanceRun) Hub() {}
 
 // Hub marks this type as a conversion hub.
-func (tr *ManagementAutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement) Hub() {}
+func (tr *ManagementAutonomousDatabaseDbmFeaturesManagement) Hub() {}
 
 // Hub marks this type as a conversion hub.
 func (tr *ManagementCloudAsm) Hub() {}
@@ -253,7 +253,7 @@ func (tr *ManagementExternalCluster) Hub() {}
 func (tr *ManagementExternalClusterInstance) Hub() {}
 
 // Hub marks this type as a conversion hub.
-func (tr *ManagementExternalcontainerdatabaseExternalContainerDbmFeaturesManagement) Hub() {}
+func (tr *ManagementExternalcontainerdatabaseDbmFeaturesManagement) Hub() {}
 
 // Hub marks this type as a conversion hub.
 func (tr *ManagementExternalDbHome) Hub() {}
@@ -301,13 +301,13 @@ func (tr *ManagementExternalMySqlDatabase) Hub() {}
 func (tr *ManagementExternalMySqlDatabaseConnector) Hub() {}
 
 // Hub marks this type as a conversion hub.
-func (tr *ManagementExternalMySqlDatabaseExternalMysqlDatabasesManagement) Hub() {}
+func (tr *ManagementExternalMySqlDatabaseExternalMysqlDatabases) Hub() {}
 
 // Hub marks this type as a conversion hub.
-func (tr *ManagementExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement) Hub() {}
+func (tr *ManagementExternalnoncontainerdatabaseDbmFeaturesManagement) Hub() {}
 
 // Hub marks this type as a conversion hub.
-func (tr *ManagementExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement) Hub() {}
+func (tr *ManagementExternalpluggabledatabaseDbmFeaturesManagement) Hub() {}
 
 // Hub marks this type as a conversion hub.
 func (tr *ManagementManagedDatabase) Hub() {}
@@ -325,7 +325,7 @@ func (tr *ManagementManagedDatabasesResetDatabaseParameter) Hub() {}
 func (tr *ManagementNamedCredential) Hub() {}
 
 // Hub marks this type as a conversion hub.
-func (tr *ManagementPluggabledatabasePluggableDatabaseDbmFeaturesManagement) Hub() {}
+func (tr *ManagementPluggabledatabaseDbmFeaturesManagement) Hub() {}
 
 // Hub marks this type as a conversion hub.
 func (tr *Migration) Hub() {}

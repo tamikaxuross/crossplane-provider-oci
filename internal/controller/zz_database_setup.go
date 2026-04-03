@@ -72,7 +72,7 @@ import (
 	externalpluggabledatabasesstackmonitoring "github.com/oracle/provider-oci/internal/controller/database/externalpluggabledatabasesstackmonitoring"
 	keystore "github.com/oracle/provider-oci/internal/controller/database/keystore"
 	maintenancerun "github.com/oracle/provider-oci/internal/controller/database/maintenancerun"
-	managementautonomousdatabaseautonomousdatabasedbmfeaturesmanagement "github.com/oracle/provider-oci/internal/controller/database/managementautonomousdatabaseautonomousdatabasedbmfeaturesmanagement"
+	managementautonomousdatabasedbmfeaturesmanagement "github.com/oracle/provider-oci/internal/controller/database/managementautonomousdatabasedbmfeaturesmanagement"
 	managementcloudasm "github.com/oracle/provider-oci/internal/controller/database/managementcloudasm"
 	managementcloudasminstance "github.com/oracle/provider-oci/internal/controller/database/managementcloudasminstance"
 	managementcloudcluster "github.com/oracle/provider-oci/internal/controller/database/managementcloudcluster"
@@ -91,7 +91,7 @@ import (
 	managementexternalasminstance "github.com/oracle/provider-oci/internal/controller/database/managementexternalasminstance"
 	managementexternalcluster "github.com/oracle/provider-oci/internal/controller/database/managementexternalcluster"
 	managementexternalclusterinstance "github.com/oracle/provider-oci/internal/controller/database/managementexternalclusterinstance"
-	managementexternalcontainerdatabaseexternalcontainerdbmfeaturesmanagement "github.com/oracle/provider-oci/internal/controller/database/managementexternalcontainerdatabaseexternalcontainerdbmfeaturesmanagement"
+	managementexternalcontainerdatabasedbmfeaturesmanagement "github.com/oracle/provider-oci/internal/controller/database/managementexternalcontainerdatabasedbmfeaturesmanagement"
 	managementexternaldbhome "github.com/oracle/provider-oci/internal/controller/database/managementexternaldbhome"
 	managementexternaldbnode "github.com/oracle/provider-oci/internal/controller/database/managementexternaldbnode"
 	managementexternaldbsystem "github.com/oracle/provider-oci/internal/controller/database/managementexternaldbsystem"
@@ -107,15 +107,15 @@ import (
 	managementexternallistener "github.com/oracle/provider-oci/internal/controller/database/managementexternallistener"
 	managementexternalmysqldatabase "github.com/oracle/provider-oci/internal/controller/database/managementexternalmysqldatabase"
 	managementexternalmysqldatabaseconnector "github.com/oracle/provider-oci/internal/controller/database/managementexternalmysqldatabaseconnector"
-	managementexternalmysqldatabaseexternalmysqldatabasesmanagement "github.com/oracle/provider-oci/internal/controller/database/managementexternalmysqldatabaseexternalmysqldatabasesmanagement"
-	managementexternalnoncontainerdatabaseexternalnoncontainerdbmfeaturesmanagement "github.com/oracle/provider-oci/internal/controller/database/managementexternalnoncontainerdatabaseexternalnoncontainerdbmfeaturesmanagement"
-	managementexternalpluggabledatabaseexternalpluggabledbmfeaturesmanagement "github.com/oracle/provider-oci/internal/controller/database/managementexternalpluggabledatabaseexternalpluggabledbmfeaturesmanagement"
+	managementexternalmysqldatabaseexternalmysqldatabases "github.com/oracle/provider-oci/internal/controller/database/managementexternalmysqldatabaseexternalmysqldatabases"
+	managementexternalnoncontainerdatabasedbmfeaturesmanagement "github.com/oracle/provider-oci/internal/controller/database/managementexternalnoncontainerdatabasedbmfeaturesmanagement"
+	managementexternalpluggabledatabasedbmfeaturesmanagement "github.com/oracle/provider-oci/internal/controller/database/managementexternalpluggabledatabasedbmfeaturesmanagement"
 	managementmanageddatabase "github.com/oracle/provider-oci/internal/controller/database/managementmanageddatabase"
 	managementmanageddatabasegroup "github.com/oracle/provider-oci/internal/controller/database/managementmanageddatabasegroup"
 	managementmanageddatabaseschangedatabaseparameter "github.com/oracle/provider-oci/internal/controller/database/managementmanageddatabaseschangedatabaseparameter"
 	managementmanageddatabasesresetdatabaseparameter "github.com/oracle/provider-oci/internal/controller/database/managementmanageddatabasesresetdatabaseparameter"
 	managementnamedcredential "github.com/oracle/provider-oci/internal/controller/database/managementnamedcredential"
-	managementpluggabledatabasepluggabledatabasedbmfeaturesmanagement "github.com/oracle/provider-oci/internal/controller/database/managementpluggabledatabasepluggabledatabasedbmfeaturesmanagement"
+	managementpluggabledatabasedbmfeaturesmanagement "github.com/oracle/provider-oci/internal/controller/database/managementpluggabledatabasedbmfeaturesmanagement"
 	migration "github.com/oracle/provider-oci/internal/controller/database/migration"
 	migrationconnection "github.com/oracle/provider-oci/internal/controller/database/migrationconnection"
 	migrationjob "github.com/oracle/provider-oci/internal/controller/database/migrationjob"
@@ -206,7 +206,7 @@ func Setup_database(mgr ctrl.Manager, o controller.Options) error {
 		externalpluggabledatabasesstackmonitoring.Setup,
 		keystore.Setup,
 		maintenancerun.Setup,
-		managementautonomousdatabaseautonomousdatabasedbmfeaturesmanagement.Setup,
+		managementautonomousdatabasedbmfeaturesmanagement.Setup,
 		managementcloudasm.Setup,
 		managementcloudasminstance.Setup,
 		managementcloudcluster.Setup,
@@ -225,7 +225,7 @@ func Setup_database(mgr ctrl.Manager, o controller.Options) error {
 		managementexternalasminstance.Setup,
 		managementexternalcluster.Setup,
 		managementexternalclusterinstance.Setup,
-		managementexternalcontainerdatabaseexternalcontainerdbmfeaturesmanagement.Setup,
+		managementexternalcontainerdatabasedbmfeaturesmanagement.Setup,
 		managementexternaldbhome.Setup,
 		managementexternaldbnode.Setup,
 		managementexternaldbsystem.Setup,
@@ -241,15 +241,15 @@ func Setup_database(mgr ctrl.Manager, o controller.Options) error {
 		managementexternallistener.Setup,
 		managementexternalmysqldatabase.Setup,
 		managementexternalmysqldatabaseconnector.Setup,
-		managementexternalmysqldatabaseexternalmysqldatabasesmanagement.Setup,
-		managementexternalnoncontainerdatabaseexternalnoncontainerdbmfeaturesmanagement.Setup,
-		managementexternalpluggabledatabaseexternalpluggabledbmfeaturesmanagement.Setup,
+		managementexternalmysqldatabaseexternalmysqldatabases.Setup,
+		managementexternalnoncontainerdatabasedbmfeaturesmanagement.Setup,
+		managementexternalpluggabledatabasedbmfeaturesmanagement.Setup,
 		managementmanageddatabase.Setup,
 		managementmanageddatabasegroup.Setup,
 		managementmanageddatabaseschangedatabaseparameter.Setup,
 		managementmanageddatabasesresetdatabaseparameter.Setup,
 		managementnamedcredential.Setup,
-		managementpluggabledatabasepluggabledatabasedbmfeaturesmanagement.Setup,
+		managementpluggabledatabasedbmfeaturesmanagement.Setup,
 		migration.Setup,
 		migrationconnection.Setup,
 		migrationjob.Setup,

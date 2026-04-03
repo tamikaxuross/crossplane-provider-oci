@@ -26,7 +26,7 @@ import (
 	monitoredresourcetype "github.com/oracle/provider-oci/internal/controller/stackmonitoring/monitoredresourcetype"
 	monitoringtemplate "github.com/oracle/provider-oci/internal/controller/stackmonitoring/monitoringtemplate"
 	monitoringtemplatealarmcondition "github.com/oracle/provider-oci/internal/controller/stackmonitoring/monitoringtemplatealarmcondition"
-	monitoringtemplatemonitoringtemplateongivenresourcesmanagement "github.com/oracle/provider-oci/internal/controller/stackmonitoring/monitoringtemplatemonitoringtemplateongivenresourcesmanagement"
+	monitoringtemplateongivenresourcesmanagement "github.com/oracle/provider-oci/internal/controller/stackmonitoring/monitoringtemplateongivenresourcesmanagement"
 	processset "github.com/oracle/provider-oci/internal/controller/stackmonitoring/processset"
 )
 
@@ -51,7 +51,7 @@ func Setup_stackmonitoring(mgr ctrl.Manager, o controller.Options) error {
 		monitoredresourcetype.Setup,
 		monitoringtemplate.Setup,
 		monitoringtemplatealarmcondition.Setup,
-		monitoringtemplatemonitoringtemplateongivenresourcesmanagement.Setup,
+		monitoringtemplateongivenresourcesmanagement.Setup,
 		processset.Setup,
 	} {
 		if err := setup(mgr, o); err != nil {
